@@ -10,12 +10,12 @@ pipeline {
     }
 
     environment {
-        DOCKER_CREDENTIAL_ID = 'dockerhub-id'
-        GITHUB_CREDENTIAL_ID = 'github-id'
+        DOCKER_CREDENTIAL_ID = 'ali-registery'
+        GITHUB_CREDENTIAL_ID = 'gitee-secret'
         KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
-        REGISTRY = 'docker.io'
-        DOCKERHUB_NAMESPACE = 'docker_username'
-        GITHUB_ACCOUNT = 'kubesphere'
+        REGISTRY = 'registry.cn-hangzhou.aliyuncs.com'
+        DOCKERHUB_NAMESPACE = 'qlq_repository'
+        GITHUB_ACCOUNT = 'qiao-zhi'
         APP_NAME = 'devops-java-sample'
     }
 
@@ -26,13 +26,13 @@ pipeline {
             }
         }
 
-        stage ('unit test') {
-            steps {
-                container ('maven') {
-                    sh 'mvn clean  -gs `pwd`/configuration/settings.xml test'
-                }
-            }
-        }
+#        stage ('unit test') {
+#            steps {
+#                container ('maven') {
+#                    sh 'mvn clean  -gs `pwd`/configuration/settings.xml test'
+#                }
+#            }
+#        }
  
         stage ('build & push') {
             steps {
