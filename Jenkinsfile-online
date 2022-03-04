@@ -11,7 +11,7 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIAL_ID = 'ali-registery'
-        GITHUB_CREDENTIAL_ID = 'gitee-secret'
+        GITHUB_CREDENTIAL_ID = 'github-secret'
         KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
         REGISTRY = 'registry.cn-hangzhou.aliyuncs.com'
         DOCKERHUB_NAMESPACE = 'qlq_repository'
